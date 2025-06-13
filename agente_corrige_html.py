@@ -4,7 +4,17 @@ from openai import AzureOpenAI
 import re
 
 class AgenteCorrigeHtml:
+    """
+    Agente IA que corrige arquivos HTML com defeitos de sintaxe.
+
+    Métodos:
+        corrige_html(conteudo_original): Recebe uma string que contém o conteúdo de um arquivo HTML inválido e retorna uma string com o conteúdo corrigido.
+    """
+
     def __init__(self):
+        """
+        Inicializa conexão com API da Azure OpenAI
+        """
         load_dotenv()
         self.client = AzureOpenAI(
             azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
